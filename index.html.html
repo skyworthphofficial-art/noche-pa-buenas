@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>SKYWORTH | Promo Review</title>
+  <style>
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body {
+      margin: 0;
+      background: #f3f6fa;
+      color: #172b46;
+      font: 14px Arial, sans-serif;
+    }
+    button, input, select, textarea { font: inherit; }
+    button {
+      padding: 11px 16px;
+      border: 1px solid #d7dfea;
+      border-radius: 8px;
+      background: white;
+      color: #173452;
+      cursor: pointer;
+    }
+    button:hover { background: #edf3fa; }
+    button:disabled { opacity: .5; cursor: wait; }
+    .primary {
+      background: #14365f;
+      color: white;
+      border-color: #14365f;
+    }
+    .primary:hover { background: #204a7c; }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d7dfea;
+      border-radius: 8px;
+      background: white;
+      color: #172b46;
+    }
+    label { display: block; margin: 16px 0 7px; }
+    h1, h2, p { margin-top: 0; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 19px; }
+    .muted { color: #6c7d91; }
+    .login {
+      width: min(420px, calc(100% - 32px));
+      margin: 12vh auto;
+      padding: 32px;
+      background: white;
+      border: 1px solid #e0e6ef;
+      border-radius: 16px;
+    }
+    .login button { width: 100%; margin-top: 22px; }
+    header {
+      background: #14365f;
+      color: white;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    header h1 { margin: 5px 0 0; }
+    main { max-width: 1600px; margin: auto; padding: 24px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .stat {
+      background: white;
+      border: 1px solid #e0e6ef;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stat strong { display: block; font-size: 30px; margin-top: 8px; }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .toolbar input { flex: 1; min-width: 180px; }
+    .toolbar select { width: 160px; }
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .panel {
+      background: white;
+      border: 1px solid #e0e6ef;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .panel-title { padding: 20px; border-bottom: 1px solid #e0e6ef; }
+    .panel-title h2 { margin: 0; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td {
+      text-align: left;
+      padding: 15px;
+      border-bottom: 1px solid #edf0f5;
+      vertical-align: middle;
+    }
+    th { background: #f8fafc; color: #60728a; font-size: 12px; }
+    td small { display: block; margin-top: 5px; color: #6c7d91; }
+    tr.selected { background: #eef5ff; }
+    .badge {
+      display: inline-block;
+      padding: 5px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      background: #fff3d4;
+      color: #8b6200;
+    }
+    .badge.valid { background: #e1f4e9; color: #17643c; }
+    .badge.duplicate { background:#f1e7ff; color:#64378c; }
+    .badge.invalid { background: #fce5e5; color: #a72c2c; }
+    .pager {
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    /* Match the Details & Receipt panel to the Participants panel height. */
+    .details-panel { display: flex; flex-direction: column; height: var(--participant-height, 380px); min-height: 0; }
+    .details-panel .panel-title { flex-shrink: 0; }
+    .details-panel #detail { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+    .detail-body { padding: 20px; }
+    dl {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: 12px;
+      margin: 0 0 24px;
+    }
+    dt { color: #6c7d91; }
+    dd { margin: 0; overflow-wrap: anywhere; white-space: pre-wrap; }
+    .receipt {
+      background: #eef2f7;
+      border: 1px solid #dce3ed;
+      border-radius: 9px;
+      padding: 10px;
+      margin-top: 12px;
+      max-height: 650px;
+      overflow: auto;
+    }
+    .receipt img { display: block; width: 100%; height: auto; }
+    .receipt iframe { width: 100%; height: 540px; border: 0; }
+    .actions { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    textarea { min-height: 90px; resize: vertical; }
+    .message {
+      color: #a32929;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin: 15px 0;
+    }
+    .success { color: #17643c; }
+    .empty { padding: 32px 20px; color: #6c7d91; }
+    @media (max-width: 1000px) {
+      .layout { grid-template-columns: 1fr; }
+      .details-panel { height: 480px; }
+    }
+    @media (max-width: 600px) {
+      main { padding: 14px; }
+      header { padding: 18px; }
+      header h1 { font-size: 20px; }
+      .stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .stat { padding: 15px; }
+      dl { grid-template-columns: 1fr; gap: 5px; }
+      dd { margin-bottom: 12px; }
+      .toolbar select { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <section id="loginScreen" class="login">
+    <p class="muted">SKYWORTH PHILIPPINES</p>
+    <h1>Promo Review</h1>
+    <p class="muted">Sign in to review participant details and receipts.</p>
+    <form id="loginForm">
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="username" required>
+      <label for="password">Password</label>
+      <input id="password" type="password"
+        autocomplete="current-password" required>
+      <button id="loginButton" class="primary" type="submit">
+        Sign in
+      </button>
+    </form>
+    <p id="loginMessage" class="message" role="status"></p>
+  </section>
+  <section id="dashboard" hidden>
+    <header>
+      <div>
+        <small>SKYWORTH PHILIPPINES</small>
+        <h1>Noche Pa Buenas · Entry Review</h1>
+      </div>
+      <button id="logoutButton">Sign out</button>
+    </header>
+    <main>
+      <div class="stats">
+        <div class="stat">Total<strong id="totalCount">—</strong></div>
+        <div class="stat">Pending<strong id="pendingCount">—</strong></div>
+        <div class="stat">Valid<strong id="validCount">—</strong></div>
+        <div class="stat">Invalid<strong id="invalidCount">—</strong></div>
+      </div>
+      <form id="filterForm" class="toolbar">
+        <input id="search" type="search"
+          placeholder="Search name, email, serial, receipt or mobile"
+          aria-label="Search entries">
+        <select id="statusFilter" aria-label="Filter status">
+          <option value="">All statuses</option>
+          <option value="pending">Pending</option>
+          <option value="valid">Valid</option>
+          <option value="invalid">Invalid</option>
+          <option value="duplicate">Duplicate</option>
+        </select>
+        <button type="submit">Search</button>
+        <button id="refreshButton" type="button">Refresh</button>
+        <button id="exportAll" type="button">Export All</button>
+        <button id="exportValid" class="primary" type="button">
+          Export Valid Raffle Tickets
+        </button>
+      </form>
+      <p class="muted">Export All: one row per registration. Export Valid Raffle Tickets: one row per ticket; 2 entries repeat the participant name twice. Only valid registrations enter the raffle export.</p>
+      <p id="message" class="message" role="status"></p>
+      <div class="layout">
+        <section class="panel" id="participantsPanel">
+          <div class="panel-title"><h2>Participants</h2></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>PARTICIPANT</th>
+                  <th>MODEL</th>
+                  <th>STATUS</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="entryRows"></tbody>
+            </table>
+          </div>
+          <div class="pager">
+            <button id="previousButton">Previous</button>
+            <span id="pageInfo"></span>
+            <button id="nextButton">Next</button>
+          </div>
+        </section>
+        <section class="panel details-panel" id="detailsPanel">
+          <div class="panel-title"><h2>Details & Receipt</h2></div>
+          <div id="detail" class="empty">
+            Select a participant to view their details and receipt.
+          </div>
+        </section>
+      </div>
+    </main>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const PROJECT_URL = "https://rsikmwyraiysnhppttjh.supabase.co";
+    const PUBLISHABLE_KEY =
+      "sb_publishable_iv3geQbAlhzDNP8v5QS_lQ_oXztE-EP";
+    const PROMO_ID = "noche-pa-buenas-2026";
+    const REVIEWER_ID = "a5b14c0d-2f43-4727-9ba7-f92014ab0261";
+    const $ = (id) => document.getElementById(id);
+    let db;
+    let user = null;
+    let rows = [];
+    let selected = null;
+    let page = 0;
+    let matchingCount = 0;
+    let searchTerm = "";
+    let statusFilter = "";
+    let previewURL = null;
+    let detailVersion = 0;
+    let loading = false;
+    let saving = false;
+    let exporting = false;
+    const PAGE_SIZE = 50;
+    // The details body scrolls independently; its outer panel matches the table height.
+    const participantsPanel = $("participantsPanel");
+    const detailsPanel = $("detailsPanel");
+    function syncDetailPanelHeight() {
+      if (window.matchMedia("(max-width: 1000px)").matches) {
+        detailsPanel.style.removeProperty("--participant-height");
+        return;
+      }
+      const height = participantsPanel.getBoundingClientRect().height;
+      if (height > 0) {
+        detailsPanel.style.setProperty("--participant-height", `${Math.round(height)}px`);
+      }
+    }
+    new ResizeObserver(syncDetailPanelHeight).observe(participantsPanel);
+    window.addEventListener("resize", syncDetailPanelHeight);
+    function message(text = "", success = false) {
+      $("message").textContent = text;
+      $("message").className = success ? "message success" : "message";
+    }
+    function textElement(tag, text, className) {
+      const element = document.createElement(tag);
+      element.textContent = text ?? "—";
+      if (className) element.className = className;
+      return element;
+    }
+    function clearDetail() {
+      detailVersion++;
+      selected = null;
+      if (previewURL) URL.revokeObjectURL(previewURL);
+      previewURL = null;
+      $("detail").className = "empty";
+      $("detail").textContent =
+        "Select a participant to view their details and receipt.";
+    }
+    function resetDashboard() {
+      user = null;
+      rows = [];
+      clearDetail();
+      $("entryRows").replaceChildren();
+      for (const id of [
+        "totalCount", "pendingCount", "validCount", "invalidCount"
+      ]) {
+        $(id).textContent = "—";
+      }
+      $("dashboard").hidden = true;
+      $("loginScreen").hidden = false;
+      $("password").value = "";
+    }
+    async function countEntries(status) {
+      let query = db.from("promo_entries")
+        .select("id", { count: "exact", head: true }).eq("promo_id", PROMO_ID);
+      if (status) query = query.eq("review_status", status);
+      const { count, error } = await query;
+      if (error) throw error;
+      return count ?? 0;
+    }
+    async function loadCounts() {
+      const counts = await Promise.all([
+        countEntries(),
+        countEntries("pending"),
+        countEntries("valid"),
+        countEntries("invalid")
+      ]);
+      if (!user) return;
+      [
+        "totalCount", "pendingCount", "validCount", "invalidCount"
+      ].forEach((id, index) => {
+        $(id).textContent = counts[index].toLocaleString();
+      });
+    }
+    function renderRows() {
+      const body = $("entryRows");
+      body.replaceChildren();
+      if (!rows.length) {
+        const tr = document.createElement("tr");
+        const td = textElement("td", "No entries found.", "muted");
+        td.colSpan = 4;
+        tr.append(td);
+        body.append(tr);
+      }
+      for (const entry of rows) {
+        const tr = document.createElement("tr");
+        if (selected?.id === entry.id) tr.className = "selected";
+        const person = document.createElement("td");
+        person.append(
+          textElement("div", entry.full_name),
+          textElement("small", entry.email)
+        );
+        const model = textElement("td", entry.model_purchased);
+      model.append(textElement("small", String(entry.raffle_entries ?? 0) + " raffle entries"));
+        const status = document.createElement("td");
+        status.append(textElement(
+          "span",
+          entry.review_status,
+          "badge " + entry.review_status
+        ));
+        const action = document.createElement("td");
+        const view = textElement("button", "View");
+        view.type = "button";
+        view.disabled = saving;
+        view.addEventListener("click", () => showDetail(entry));
+        action.append(view);
+        tr.append(person, model, status, action);
+        body.append(tr);
+      }
+      const pages = Math.max(1, Math.ceil(matchingCount / PAGE_SIZE));
+      $("pageInfo").textContent =
+        `Page ${page + 1} of ${pages} · ${matchingCount} entries`;
+      $("previousButton").disabled = loading || page === 0;
+      $("nextButton").disabled =
+        loading || (page + 1) * PAGE_SIZE >= matchingCount;
+    }
+    async function loadRows() {
+      if (loading || !user) return;
+      loading = true;
+      $("previousButton").disabled = true;
+      $("nextButton").disabled = true;
+      try {
+        let query = db.from("promo_entries")
+          .select("*", { count: "exact" }).eq("promo_id", PROMO_ID)
+          .order("created_at", { ascending: false })
+          .order("id", { ascending: false });
+        if (statusFilter) {
+          query = query.eq("review_status", statusFilter);
+        }
+        if (searchTerm) {
+          const safe = searchTerm
+            .replace(/[^a-zA-Z0-9@._ +\-]/g, "")
+            .slice(0, 150)
+            .trim();
+          if (safe) {
+            query = query.or(
+              ["full_name", "email", "serial_number", "receipt_number", "contact_number"]
+                .map(field => `${field}.ilike.*${safe}*`)
+                .join(",")
+            );
+          }
+        }
+        const { data, count, error } = await query.range(
+          page * PAGE_SIZE,
+          page * PAGE_SIZE + PAGE_SIZE - 1
+        );
+        if (error) throw error;
+        if (!user) return;
+        rows = data || [];
+        matchingCount = count || 0;
+      } finally {
+        loading = false;
+        if (user) renderRows();
+      }
+    }
+    async function refresh() {
+      if (loading || saving) return;
+      message("");
+      try {
+        clearDetail();
+        await Promise.all([loadCounts(), loadRows()]);
+      } catch (error) {
+        message("Could not load entries: " + error.message);
+      }
+    }
+    async function showDetail(entry) {
+      if (saving || !user) return;
+      clearDetail();
+      selected = entry;
+      const version = detailVersion;
+      renderRows();
+      const detail = $("detail");
+      detail.className = "detail-body";
+      detail.replaceChildren();
+      const list = document.createElement("dl");
+      const fields = [
+        ["Entry ID", entry.id],
+        ["Submitted", new Date(entry.created_at).toLocaleString(
+          "en-PH", { timeZone: "Asia/Manila" }
+        )],
+        ["Full name", entry.full_name],
+        ["Mobile", "+63 " + entry.contact_number],
+        ["Email", entry.email],
+        ["Address", entry.address],
+        ["Purchase date", entry.purchase_date],
+        ["Receipt / SI number", entry.receipt_number || "—"],
+        ["TV serial number", entry.serial_number],
+        ["Raffle entries", entry.raffle_entries],
+        ["Store / branch", entry.store_branch],
+        ["Model", entry.model_purchased],
+        ["Consent", entry.consent ? "Yes" : "No"],
+        ["Status", entry.review_status],
+        ["Reviewed at", entry.reviewed_at
+          ? new Date(entry.reviewed_at).toLocaleString(
+              "en-PH", { timeZone: "Asia/Manila" }
+            )
+          : "—"],
+        ["Reviewed by", entry.reviewed_by || "—"]
+      ];
+      for (const [label, value] of fields) {
+        list.append(
+          textElement("dt", label),
+          textElement("dd", value)
+        );
+      }
+      detail.append(list, textElement("h2", "Receipt"));
+      const receipt = document.createElement("div");
+      receipt.className = "receipt";
+      receipt.textContent = "Loading receipt…";
+      detail.append(receipt);
+      const openLink = textElement("a", "Open receipt in new tab");
+      openLink.target = "_blank";
+      openLink.rel = "noopener noreferrer";
+      openLink.hidden = true;
+      detail.append(openLink);
+      const reviewForm = document.createElement("form");
+      const statusLabel = textElement("label", "Review status");
+      statusLabel.htmlFor = "reviewStatus";
+      const status = document.createElement("select");
+      status.id = "reviewStatus";
+      for (const value of ["pending", "valid", "invalid", "duplicate"]) {
+        const option = textElement("option", value);
+        option.value = value;
+        status.append(option);
+      }
+      status.value = entry.review_status;
+      const notesLabel = textElement("label", "Remarks");
+      notesLabel.htmlFor = "reviewNotes";
+      const notes = document.createElement("textarea");
+      notes.id = "reviewNotes";
+      notes.maxLength = 5000;
+      notes.placeholder = "Reason or review notes";
+      notes.value = entry.review_notes || "";
+      const save = textElement("button", "Save review", "primary");
+      save.type = "submit";
+      save.style.marginTop = "14px";
+      reviewForm.append(statusLabel, status, notesLabel, notes, save);
+      detail.append(reviewForm);
+      reviewForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (saving || !user) return;
+        saving = true;
+        save.disabled = true;
+        save.textContent = "Saving…";
+        renderRows();
+        message("");
+        try {
+          const { data, error } = await db.from("promo_entries")
+            .update({
+              review_status: status.value,
+              review_notes: notes.value.trim() || null,
+              reviewed_at: new Date().toISOString(),
+              reviewed_by: user.id
+            })
+            .eq("id", entry.id).eq("promo_id", PROMO_ID)
+            .select()
+            .single();
+          if (error) throw error;
+          saving = false;
+          await Promise.all([loadCounts(), loadRows()]);
+          if (user) {
+            await showDetail(data);
+            message("Review saved.", true);
+          }
+        } catch (error) {
+          message("Could not save review: " + error.message);
+        } finally {
+          saving = false;
+          save.disabled = false;
+          save.textContent = "Save review";
+          if (user) renderRows();
+        }
+      });
+      try {
+        const { data, error } = await db.storage
+          .from("promo-receipts")
+          .download(entry.receipt_path);
+        if (error) throw error;
+        if (version !== detailVersion || !user) return;
+        previewURL = URL.createObjectURL(data);
+        receipt.replaceChildren();
+        if (/\.pdf$/i.test(entry.receipt_path)) {
+          const frame = document.createElement("iframe");
+          frame.title = "Receipt PDF";
+          frame.src = previewURL;
+          receipt.append(frame);
+        } else {
+          const img = document.createElement("img");
+          img.alt = "Uploaded receipt";
+          img.src = previewURL;
+          receipt.append(img);
+        }
+        openLink.href = previewURL;
+        openLink.hidden = false;
+      } catch (error) {
+        if (version === detailVersion && user) {
+          receipt.textContent = "Could not open receipt: " + error.message;
+        }
+      }
+    }
+    function raffleRows(entries) {
+      const result = [];
+      const seen = new Set();
+      for (const entry of entries) {
+        if (seen.has(entry.id)) continue;
+        seen.add(entry.id);
+        if (entry.review_status !== 'valid') continue;
+        const count = Number(entry.raffle_entries);
+        if (!entry.serial_number || ![1, 2].includes(count)) {
+          throw new Error('A valid registration has a missing serial or invalid entry count. Review it before exporting.');
+        }
+        for (let ticket = 1; ticket <= count; ticket++) {
+          result.push({ ...entry, ticket_id: entry.id + '-' + ticket, ticket_number: ticket });
+        }
+      }
+      return result;
+    }
+
+    function csvCell(value) {
+      let text = value == null ? "" : String(value);
+      // Prevent spreadsheet formulas from uploaded participant text.
+      if (/^[\s]*[=+\-@]/.test(text) || /^[\t\r\n]/.test(text)) {
+        text = "'" + text;
+      }
+      return '"' + text.replaceAll('"', '""') + '"';
+    }
+    async function exportEntries(validOnly) {
+      if (exporting || !user) return;
+      exporting = true;
+      $("exportAll").disabled = true;
+      $("exportValid").disabled = true;
+      message("Preparing export…", true);
+      try {
+        const entries = [];
+        const batchSize = 500;
+        let lastID = null;
+        while (true) {
+          let query = db.from("promo_entries")
+            .select("*").eq("promo_id", PROMO_ID)
+            .order("id", { ascending: true })
+            .limit(batchSize);
+          if (validOnly) query = query.eq("review_status", "valid");
+          if (lastID) query = query.gt("id", lastID);
+          const { data, error } = await query;
+          if (error) throw error;
+          if (!user) return;
+          if (!data.length) break;
+          entries.push(...data);
+          lastID = data[data.length - 1].id;
+          message(`Preparing export: ${entries.length} entries…`, true);
+        }
+        if (!entries.length) {
+          message("No entries to export.");
+          return;
+        }
+        const exportedRows = validOnly ? raffleRows(entries) : entries;
+        // Display the original registration instant in Philippine local time.
+        const timestampFormatter = new Intl.DateTimeFormat("en-US", {
+          timeZone: "Asia/Manila",
+          year: "numeric", month: "2-digit", day: "2-digit",
+          hour: "2-digit", minute: "2-digit", second: "2-digit",
+          hour12: true
+        });
+        function registrationTimestamp(value) {
+          if (!value) return "";
+          const date = new Date(value);
+          if (Number.isNaN(date.getTime())) return String(value);
+          const parts = Object.fromEntries(
+            timestampFormatter.formatToParts(date).map(part => [part.type, part.value])
+          );
+          return `${parts.month}/${parts.day}/${parts.year} ${parts.hour}:${parts.minute}:${parts.second} ${parts.dayPeriod} PHT`;
+        }
+        const columns = [
+          ...(validOnly ? ["ticket_id", "ticket_number"] : []),
+          "id", "created_at", "full_name", "contact_number",
+          "address", "email", "purchase_date", "receipt_number", "serial_number", "raffle_entries",
+          "store_branch", "model_purchased", "consent",
+          "review_status", "review_notes", "reviewed_at",
+          "reviewed_by", "receipt_path"
+        ];
+        const csv = [
+          columns.map(column => csvCell(column === "created_at" ? "Time stamp" : column)).join(","),
+          ...exportedRows.map(entry =>
+            columns.map(column => csvCell(
+              column === "created_at" ? registrationTimestamp(entry.created_at) : entry[column]
+            )).join(",")
+          )
+        ].join("\r\n");
+        const blob = new Blob(["\uFEFF", csv], {
+          type: "text/csv;charset=utf-8"
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download =
+          `skyworth-${validOnly ? "valid-raffle-tickets" : "all-registrations"}.csv`;
+        document.body.append(link);
+        link.click();
+        link.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        message(`Exported ${exportedRows.length} ${validOnly ? "raffle tickets" : "registrations"}.`, true);
+      } catch (error) {
+        message("Export failed: " + error.message);
+      } finally {
+        exporting = false;
+        $("exportAll").disabled = false;
+        $("exportValid").disabled = false;
+      }
+    }
+    $("loginForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!db) return;
+      $("loginButton").disabled = true;
+      $("loginMessage").textContent = "";
+      try {
+        const { data, error } = await db.auth.signInWithPassword({
+          email: $("email").value.trim(),
+          password: $("password").value
+        });
+        if (error) throw error;
+        if (data.user.id !== REVIEWER_ID) {
+          await db.auth.signOut();
+          throw new Error("This account has no reviewer access.");
+        }
+        user = data.user;
+        $("password").value = "";
+        $("loginScreen").hidden = true;
+        $("dashboard").hidden = false;
+        page = 0;
+        await refresh();
+      } catch (error) {
+        $("loginMessage").textContent = error.message;
+      } finally {
+        $("loginButton").disabled = false;
+      }
+    });
+    $("logoutButton").addEventListener("click", async () => {
+      if (saving) return;
+      resetDashboard();
+      await db.auth.signOut({ scope: "local" });
+    });
+    $("filterForm").addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (loading || saving) return;
+      searchTerm = $("search").value.trim();
+      statusFilter = $("statusFilter").value;
+      page = 0;
+      await refresh();
+    });
+    $("refreshButton").addEventListener("click", refresh);
+    $("previousButton").addEventListener("click", async () => {
+      if (loading || saving || page === 0) return;
+      page--;
+      await refresh();
+    });
+    $("nextButton").addEventListener("click", async () => {
+      if (loading || saving ||
+          (page + 1) * PAGE_SIZE >= matchingCount) return;
+      page++;
+      await refresh();
+    });
+    $("exportAll").addEventListener("click", () => exportEntries(false));
+    $("exportValid").addEventListener("click", () => exportEntries(true));
+    if (!window.supabase) {
+      $("loginMessage").textContent =
+        "Could not load Supabase. Check your internet and reload.";
+      $("loginButton").disabled = true;
+    } else {
+      db = window.supabase.createClient(PROJECT_URL, PUBLISHABLE_KEY, {
+        auth: {
+          persistSession: false,
+          autoRefreshToken: true,
+          detectSessionInUrl: false
+        }
+      });
+      db.auth.onAuthStateChange((event) => {
+        if (event === "SIGNED_OUT") resetDashboard();
+      });
+    }
+  </script>
+</body>
+</html>
