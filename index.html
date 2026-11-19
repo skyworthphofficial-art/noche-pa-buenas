@@ -14,15 +14,11 @@
 
   <title>SKYWORTH | Promo Review</title>
 
-
-
   <style>
 
     * { box-sizing: border-box; }
 
     [hidden] { display: none !important; }
-
-
 
     body {
 
@@ -36,11 +32,7 @@
 
     }
 
-
-
     button, input, select, textarea { font: inherit; }
-
-
 
     button {
 
@@ -58,13 +50,9 @@
 
     }
 
-
-
     button:hover { background: #edf3fa; }
 
     button:disabled { opacity: .5; cursor: wait; }
-
-
 
     .primary {
 
@@ -76,11 +64,7 @@
 
     }
 
-
-
     .primary:hover { background: #204a7c; }
-
-
 
     input, select, textarea {
 
@@ -98,8 +82,6 @@
 
     }
 
-
-
     label { display: block; margin: 16px 0 7px; }
 
     h1, h2, p { margin-top: 0; }
@@ -109,8 +91,6 @@
     h2 { font-size: 19px; }
 
     .muted { color: #6c7d91; }
-
-
 
     .login {
 
@@ -128,11 +108,7 @@
 
     }
 
-
-
     .login button { width: 100%; margin-top: 22px; }
-
-
 
     header {
 
@@ -152,13 +128,9 @@
 
     }
 
-
-
     header h1 { margin: 5px 0 0; }
 
     main { max-width: 1600px; margin: auto; padding: 24px; }
-
-
 
     .stats {
 
@@ -172,8 +144,6 @@
 
     }
 
-
-
     .stat {
 
       background: white;
@@ -186,8 +156,6 @@
 
     }
 
-
-
     .stat strong {
 
       display: block;
@@ -197,8 +165,6 @@
       margin-top: 8px;
 
     }
-
-
 
     .toolbar {
 
@@ -212,13 +178,9 @@
 
     }
 
-
-
     .toolbar input { flex: 1; min-width: 180px; }
 
     .toolbar select { width: 160px; }
-
-
 
     .layout {
 
@@ -232,8 +194,6 @@
 
     }
 
-
-
     .panel {
 
       background: white;
@@ -246,8 +206,6 @@
 
     }
 
-
-
     .panel-title {
 
       padding: 20px;
@@ -256,11 +214,7 @@
 
     }
 
-
-
     .panel-title h2 { margin: 0; }
-
-
 
     #backToParticipants {
 
@@ -270,13 +224,9 @@
 
     }
 
-
-
     .table-wrap { overflow-x: auto; }
 
     table { width: 100%; border-collapse: collapse; }
-
-
 
     th, td {
 
@@ -290,8 +240,6 @@
 
     }
 
-
-
     th {
 
       background: #f8fafc;
@@ -301,8 +249,6 @@
       font-size: 12px;
 
     }
-
-
 
     td small {
 
@@ -314,11 +260,7 @@
 
     }
 
-
-
     tr.selected { background: #eef5ff; }
-
-
 
     .badge {
 
@@ -336,15 +278,11 @@
 
     }
 
-
-
     .badge.valid { background: #e1f4e9; color: #17643c; }
 
     .badge.duplicate { background: #f1e7ff; color: #64378c; }
 
     .badge.invalid { background: #fce5e5; color: #a72c2c; }
-
-
 
     .pager {
 
@@ -360,8 +298,6 @@
 
     }
 
-
-
     .pager span {
 
       text-align: center;
@@ -370,11 +306,7 @@
 
     }
 
-
-
     .pager button { flex-shrink: 0; }
-
-
 
     .details-panel {
 
@@ -388,11 +320,7 @@
 
     }
 
-
-
     .details-panel .panel-title { flex-shrink: 0; }
-
-
 
     .details-panel #detail {
 
@@ -406,11 +334,7 @@
 
     }
 
-
-
     .detail-body { padding: 20px; }
-
-
 
     dl {
 
@@ -424,11 +348,7 @@
 
     }
 
-
-
     dt { color: #6c7d91; }
-
-
 
     dd {
 
@@ -439,8 +359,6 @@
       white-space: pre-wrap;
 
     }
-
-
 
     .receipt {
 
@@ -460,8 +378,6 @@
 
     }
 
-
-
     .receipt img {
 
       display: block;
@@ -472,8 +388,6 @@
 
     }
 
-
-
     .receipt iframe {
 
       width: 100%;
@@ -483,8 +397,6 @@
       border: 0;
 
     }
-
-
 
     .actions {
 
@@ -498,11 +410,7 @@
 
     }
 
-
-
     textarea { min-height: 90px; resize: vertical; }
-
-
 
     .message {
 
@@ -516,19 +424,13 @@
 
     }
 
-
-
     .success { color: #17643c; }
 
     .empty { padding: 32px 20px; color: #6c7d91; }
 
-
-
     @media (max-width: 1000px) {
 
       .layout { grid-template-columns: 1fr; }
-
-
 
       .details-panel {
 
@@ -538,15 +440,11 @@
 
       }
 
-
-
       .details-panel #detail { overflow-y: visible; }
 
       #backToParticipants { display: inline-block; }
 
     }
-
-
 
     @media (max-width: 600px) {
 
@@ -556,8 +454,6 @@
 
       header h1 { font-size: 20px; }
 
-
-
       .stats {
 
         grid-template-columns: repeat(2, 1fr);
@@ -565,8 +461,6 @@
         gap: 10px;
 
       }
-
-
 
       .stat { padding: 15px; }
 
@@ -582,8 +476,6 @@
 
 </head>
 
-
-
 <body>
 
   <section id="loginScreen" class="login">
@@ -597,8 +489,6 @@
       Sign in to review participant details and receipts.
 
     </p>
-
-
 
     <form id="loginForm">
 
@@ -616,8 +506,6 @@
 
       >
 
-
-
       <label for="password">Password</label>
 
       <input
@@ -632,8 +520,6 @@
 
       >
 
-
-
       <button id="loginButton" class="primary" type="submit">
 
         Sign in
@@ -642,13 +528,9 @@
 
     </form>
 
-
-
     <p id="loginMessage" class="message" role="status"></p>
 
   </section>
-
-
 
   <section id="dashboard" hidden>
 
@@ -662,13 +544,9 @@
 
       </div>
 
-
-
       <button id="logoutButton">Sign out</button>
 
     </header>
-
-
 
     <main>
 
@@ -700,8 +578,6 @@
 
       </div>
 
-
-
       <form id="filterForm" class="toolbar">
 
         <input
@@ -715,8 +591,6 @@
           aria-label="Search entries"
 
         >
-
-
 
         <select id="statusFilter" aria-label="Filter status">
 
@@ -732,15 +606,11 @@
 
         </select>
 
-
-
         <button type="submit">Search</button>
 
         <button id="refreshButton" type="button">Refresh</button>
 
         <button id="exportAll" type="button">Export All</button>
-
-
 
         <button id="exportValid" class="primary" type="button">
 
@@ -749,8 +619,6 @@
         </button>
 
       </form>
-
-
 
       <p class="muted">
 
@@ -764,11 +632,7 @@
 
       </p>
 
-
-
       <p id="message" class="message" role="status"></p>
-
-
 
       <div class="layout">
 
@@ -779,8 +643,6 @@
             <h2>Participants</h2>
 
           </div>
-
-
 
           <div class="table-wrap">
 
@@ -802,15 +664,11 @@
 
               </thead>
 
-
-
               <tbody id="entryRows"></tbody>
 
             </table>
 
           </div>
-
-
 
           <div class="pager">
 
@@ -824,15 +682,11 @@
 
         </section>
 
-
-
         <section class="panel details-panel" id="detailsPanel">
 
           <div class="panel-title">
 
             <h2>Details & Receipt</h2>
-
-
 
             <button id="backToParticipants" type="button">
 
@@ -841,8 +695,6 @@
             </button>
 
           </div>
-
-
 
           <div id="detail" class="empty">
 
@@ -858,39 +710,25 @@
 
   </section>
 
-
-
-  <script src="https\://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
 
     const PROJECT_URL =
 
-      "https\://rsikmwyraiysnhppttjh.supabase.co";
-
-
+      "https://rsikmwyraiysnhppttjh.supabase.co";
 
     const PUBLISHABLE_KEY =
 
       "sb_publishable_iv3geQbAlhzDNP8v5QS_lQ_oXztE-EP";
 
-
-
     const PROMO_ID = "noche-pa-buenas-2026";
 
     const REVIEWER_ID = "a5b14c0d-2f43-4727-9ba7-f92014ab0261";
 
-
-
     const PAGE_SIZE = 10;
 
-
-
     const $ = (id) => document.getElementById(id);
-
-
 
     let db;
 
@@ -918,13 +756,9 @@
 
     let exporting = false;
 
-
-
     const participantsPanel = $("participantsPanel");
 
     const detailsPanel = $("detailsPanel");
-
-
 
     function syncDetailPanelHeight() {
 
@@ -936,11 +770,7 @@
 
       }
 
-
-
       const height = participantsPanel.getBoundingClientRect().height;
-
-
 
       if (height > 0) {
 
@@ -956,17 +786,11 @@
 
     }
 
-
-
     new ResizeObserver(syncDetailPanelHeight)
 
       .observe(participantsPanel);
 
-
-
     window.addEventListener("resize", syncDetailPanelHeight);
-
-
 
     function message(text = "", success = false) {
 
@@ -978,15 +802,11 @@
 
     }
 
-
-
     function textElement(tag, text, className) {
 
       const element = document.createElement(tag);
 
       element.textContent = text ?? "—";
-
-
 
       if (className) {
 
@@ -994,13 +814,9 @@
 
       }
 
-
-
       return element;
 
     }
-
-
 
     function clearDetail() {
 
@@ -1008,15 +824,11 @@
 
       selected = null;
 
-
-
       if (previewURL) {
 
         URL.revokeObjectURL(previewURL);
 
       }
-
-
 
       previewURL = null;
 
@@ -1028,21 +840,15 @@
 
     }
 
-
-
     function resetDashboard() {
 
       user = null;
 
       rows = [];
 
-
-
       clearDetail();
 
       $("entryRows").replaceChildren();
-
-
 
       for (const id of [
 
@@ -1060,8 +866,6 @@
 
       }
 
-
-
       $("dashboard").hidden = true;
 
       $("loginScreen").hidden = false;
@@ -1069,8 +873,6 @@
       $("password").value = "";
 
     }
-
-
 
     async function countEntries(status) {
 
@@ -1086,29 +888,19 @@
 
         .eq("promo_id", PROMO_ID);
 
-
-
       if (status) {
 
         query = query.eq("review_status", status);
 
       }
 
-
-
       const { count, error } = await query;
 
-
-
       if (error) throw error;
-
-
 
       return count ?? 0;
 
     }
-
-
 
     async function loadCounts() {
 
@@ -1124,11 +916,7 @@
 
       ]);
 
-
-
       if (!user) return;
-
-
 
       [
 
@@ -1148,15 +936,11 @@
 
     }
 
-
-
     function renderRows() {
 
       const body = $("entryRows");
 
       body.replaceChildren();
-
-
 
       if (!rows.length) {
 
@@ -1172,8 +956,6 @@
 
         );
 
-
-
         td.colSpan = 4;
 
         tr.append(td);
@@ -1182,13 +964,9 @@
 
       }
 
-
-
       for (const entry of rows) {
 
         const tr = document.createElement("tr");
-
-
 
         if (selected?.id === entry.id) {
 
@@ -1196,11 +974,7 @@
 
         }
 
-
-
         const person = document.createElement("td");
-
-
 
         person.append(
 
@@ -1210,8 +984,6 @@
 
         );
 
-
-
         const model = textElement(
 
           "td",
@@ -1219,8 +991,6 @@
           entry.model_purchased
 
         );
-
-
 
         model.append(
 
@@ -1234,11 +1004,7 @@
 
         );
 
-
-
         const status = document.createElement("td");
-
-
 
         status.append(
 
@@ -1254,21 +1020,15 @@
 
         );
 
-
-
         const action = document.createElement("td");
 
         const view = textElement("button", "View");
-
-
 
         view.type = "button";
 
         view.disabled = saving;
 
         view.addEventListener("click", () => showDetail(entry));
-
-
 
         action.append(view);
 
@@ -1278,8 +1038,6 @@
 
       }
 
-
-
       const pages = Math.max(
 
         1,
@@ -1288,19 +1046,13 @@
 
       );
 
-
-
       $("pageInfo").textContent =
 
         `Page ${page + 1} of ${pages} · ${matchingCount} entries`;
 
-
-
       $("previousButton").disabled =
 
         loading || page === 0;
-
-
 
       $("nextButton").disabled =
 
@@ -1308,23 +1060,15 @@
 
     }
 
-
-
     async function loadRows() {
 
       if (loading || !user) return;
 
-
-
       loading = true;
-
-
 
       $("previousButton").disabled = true;
 
       $("nextButton").disabled = true;
-
-
 
       try {
 
@@ -1338,15 +1082,11 @@
 
           .order("id", { ascending: false });
 
-
-
         if (statusFilter) {
 
           query = query.eq("review_status", statusFilter);
 
         }
-
-
 
         if (searchTerm) {
 
@@ -1357,8 +1097,6 @@
             .slice(0, 150)
 
             .trim();
-
-
 
           if (safe) {
 
@@ -1388,8 +1126,6 @@
 
         }
 
-
-
         const { data, count, error } = await query.range(
 
           page * PAGE_SIZE,
@@ -1398,13 +1134,9 @@
 
         );
 
-
-
         if (error) throw error;
 
         if (!user) return;
-
-
 
         rows = data || [];
 
@@ -1413,8 +1145,6 @@
       } finally {
 
         loading = false;
-
-
 
         if (user) {
 
@@ -1426,23 +1156,15 @@
 
     }
 
-
-
     async function refresh() {
 
       if (loading || saving) return;
 
-
-
       message("");
-
-
 
       try {
 
         clearDetail();
-
-
 
         await Promise.all([
 
@@ -1460,27 +1182,17 @@
 
     }
 
-
-
     async function showDetail(entry) {
 
       if (saving || !user) return;
-
-
 
       clearDetail();
 
       selected = entry;
 
-
-
       const version = detailVersion;
 
-
-
       renderRows();
-
-
 
       const detail = $("detail");
 
@@ -1488,17 +1200,11 @@
 
       detail.replaceChildren();
 
-
-
       const list = document.createElement("dl");
-
-
 
       const fields = [
 
         ["Entry ID", entry.id],
-
-
 
         [
 
@@ -1513,8 +1219,6 @@
           )
 
         ],
-
-
 
         ["Full name", entry.full_name],
 
@@ -1540,8 +1244,6 @@
 
         ["Status", entry.review_status],
 
-
-
         [
 
           "Reviewed at",
@@ -1560,13 +1262,9 @@
 
         ],
 
-
-
         ["Reviewed by", entry.reviewed_by || "—"]
 
       ];
-
-
 
       for (const [label, value] of fields) {
 
@@ -1580,8 +1278,6 @@
 
       }
 
-
-
       detail.append(
 
         list,
@@ -1589,8 +1285,6 @@
         textElement("h2", "Receipt")
 
       );
-
-
 
       const receipt = document.createElement("div");
 
@@ -1600,8 +1294,6 @@
 
       detail.append(receipt);
 
-
-
       const openLink = textElement(
 
         "a",
@@ -1609,8 +1301,6 @@
         "Open receipt in new tab"
 
       );
-
-
 
       openLink.target = "_blank";
 
@@ -1620,11 +1310,7 @@
 
       detail.append(openLink);
 
-
-
       const reviewForm = document.createElement("form");
-
-
 
       const statusLabel = textElement(
 
@@ -1634,17 +1320,11 @@
 
       );
 
-
-
       statusLabel.htmlFor = "reviewStatus";
-
-
 
       const status = document.createElement("select");
 
       status.id = "reviewStatus";
-
-
 
       for (const value of [
 
@@ -1666,17 +1346,11 @@
 
       }
 
-
-
       status.value = entry.review_status;
-
-
 
       const notesLabel = textElement("label", "Remarks");
 
       notesLabel.htmlFor = "reviewNotes";
-
-
 
       const notes = document.createElement("textarea");
 
@@ -1688,8 +1362,6 @@
 
       notes.value = entry.review_notes || "";
 
-
-
       const save = textElement(
 
         "button",
@@ -1700,13 +1372,9 @@
 
       );
 
-
-
       save.type = "submit";
 
       save.style.marginTop = "14px";
-
-
 
       reviewForm.append(
 
@@ -1722,13 +1390,9 @@
 
       );
 
-
-
       detail.append(reviewForm);
 
       detail.scrollTop = 0;
-
-
 
       if (window.matchMedia("(max-width: 1000px)").matches) {
 
@@ -1742,17 +1406,11 @@
 
       }
 
-
-
       reviewForm.addEventListener("submit", async (event) => {
 
         event.preventDefault();
 
-
-
         if (saving || !user) return;
-
-
 
         saving = true;
 
@@ -1760,13 +1418,9 @@
 
         save.textContent = "Saving…";
 
-
-
         renderRows();
 
         message("");
-
-
 
         try {
 
@@ -1794,15 +1448,9 @@
 
             .single();
 
-
-
           if (error) throw error;
 
-
-
           saving = false;
-
-
 
           await Promise.all([
 
@@ -1811,8 +1459,6 @@
             loadRows()
 
           ]);
-
-
 
           if (user) {
 
@@ -1834,8 +1480,6 @@
 
           save.textContent = "Save review";
 
-
-
           if (user) {
 
             renderRows();
@@ -1846,8 +1490,6 @@
 
       });
 
-
-
       try {
 
         const { data, error } = await db.storage
@@ -1856,21 +1498,15 @@
 
           .download(entry.receipt_path);
 
-
-
         if (error) throw error;
 
         if (version !== detailVersion || !user) return;
-
-
 
         previewURL = URL.createObjectURL(data);
 
         receipt.replaceChildren();
 
-
-
-        if (/\.pdf$/i.test(entry.receipt_path)) {
+        if (/\.pdf$/i.test(entry.receipt_path || "")) {
 
           const frame = document.createElement("iframe");
 
@@ -1892,8 +1528,6 @@
 
         }
 
-
-
         openLink.href = previewURL;
 
         openLink.hidden = false;
@@ -1912,33 +1546,21 @@
 
     }
 
-
-
     function raffleRows(entries) {
 
       const result = [];
 
       const seen = new Set();
 
-
-
       for (const entry of entries) {
 
         if (seen.has(entry.id)) continue;
 
-
-
         seen.add(entry.id);
-
-
 
         if (entry.review_status !== "valid") continue;
 
-
-
         const count = Number(entry.raffle_entries);
-
-
 
         if (
 
@@ -1956,8 +1578,6 @@
 
         }
 
-
-
         for (let ticket = 1; ticket <= count; ticket++) {
 
           result.push({
@@ -1974,23 +1594,17 @@
 
       }
 
-
-
       return result;
 
     }
-
-
 
     function csvCell(value) {
 
       let text = value == null ? "" : String(value);
 
-
-
       if (
 
-        /^[\s]*[=+\-@]/.test(text) ||
+        /^\s*[=+\-@]/.test(text) ||
 
         /^[\t\r\n]/.test(text)
 
@@ -2000,33 +1614,21 @@
 
       }
 
-
-
       return '"' + text.replaceAll('"', '""') + '"';
 
     }
-
-
 
     async function exportEntries(validOnly) {
 
       if (exporting || !user) return;
 
-
-
       exporting = true;
-
-
 
       $("exportAll").disabled = true;
 
       $("exportValid").disabled = true;
 
-
-
       message("Preparing export…", true);
-
-
 
       try {
 
@@ -2035,8 +1637,6 @@
         const batchSize = 500;
 
         let lastID = null;
-
-
 
         while (true) {
 
@@ -2050,15 +1650,11 @@
 
             .limit(batchSize);
 
-
-
           if (validOnly) {
 
             query = query.eq("review_status", "valid");
 
           }
-
-
 
           if (lastID) {
 
@@ -2066,11 +1662,7 @@
 
           }
 
-
-
           const { data, error } = await query;
-
-
 
           if (error) throw error;
 
@@ -2078,13 +1670,9 @@
 
           if (!data.length) break;
 
-
-
           entries.push(...data);
 
           lastID = data[data.length - 1].id;
-
-
 
           message(
 
@@ -2096,8 +1684,6 @@
 
         }
 
-
-
         if (!entries.length) {
 
           message("No entries to export.");
@@ -2106,15 +1692,11 @@
 
         }
 
-
-
         const exportedRows = validOnly
 
           ? raffleRows(entries)
 
           : entries;
-
-
 
         const timestampFormatter = new Intl.DateTimeFormat(
 
@@ -2142,25 +1724,17 @@
 
         );
 
-
-
         function registrationTimestamp(value) {
 
           if (!value) return "";
 
-
-
           const date = new Date(value);
-
-
 
           if (Number.isNaN(date.getTime())) {
 
             return String(value);
 
           }
-
-
 
           const parts = Object.fromEntries(
 
@@ -2171,8 +1745,6 @@
               .map(part => [part.type, part.value])
 
           );
-
-
 
           return (
 
@@ -2185,8 +1757,6 @@
           );
 
         }
-
-
 
         const columns = [
 
@@ -2234,8 +1804,6 @@
 
         ];
 
-
-
         const csv = [
 
           columns.map(column =>
@@ -2251,8 +1819,6 @@
             )
 
           ).join(","),
-
-
 
           ...exportedRows.map(entry =>
 
@@ -2274,21 +1840,15 @@
 
         ].join("\r\n");
 
-
-
         const blob = new Blob(["\uFEFF", csv], {
 
           type: "text/csv;charset=utf-8"
 
         });
 
-
-
         const url = URL.createObjectURL(blob);
 
         const link = document.createElement("a");
-
-
 
         link.href = url;
 
@@ -2300,15 +1860,11 @@
 
             : "all-registrations"}.csv`;
 
-
-
         document.body.append(link);
 
         link.click();
 
         link.remove();
-
-
 
         setTimeout(
 
@@ -2317,8 +1873,6 @@
           1000
 
         );
-
-
 
         message(
 
@@ -2340,8 +1894,6 @@
 
         exporting = false;
 
-
-
         $("exportAll").disabled = false;
 
         $("exportValid").disabled = false;
@@ -2350,23 +1902,15 @@
 
     }
 
-
-
     $("loginForm").addEventListener("submit", async (event) => {
 
       event.preventDefault();
 
-
-
       if (!db) return;
-
-
 
       $("loginButton").disabled = true;
 
       $("loginMessage").textContent = "";
-
-
 
       try {
 
@@ -2380,17 +1924,11 @@
 
           });
 
-
-
         if (error) throw error;
-
-
 
         if (data.user.id !== REVIEWER_ID) {
 
           await db.auth.signOut();
-
-
 
           throw new Error(
 
@@ -2400,11 +1938,7 @@
 
         }
 
-
-
         user = data.user;
-
-
 
         $("password").value = "";
 
@@ -2412,11 +1946,7 @@
 
         $("dashboard").hidden = false;
 
-
-
         page = 0;
-
-
 
         await refresh();
 
@@ -2432,49 +1962,31 @@
 
     });
 
-
-
     $("logoutButton").addEventListener("click", async () => {
 
       if (saving) return;
 
-
-
       resetDashboard();
-
-
 
       await db.auth.signOut({ scope: "local" });
 
     });
 
-
-
     $("filterForm").addEventListener("submit", async (event) => {
 
       event.preventDefault();
 
-
-
       if (loading || saving) return;
-
-
 
       searchTerm = $("search").value.trim();
 
       statusFilter = $("statusFilter").value;
 
-
-
       page = 0;
-
-
 
       await refresh();
 
     });
-
-
 
     $("backToParticipants").addEventListener("click", () => {
 
@@ -2488,27 +2000,17 @@
 
     });
 
-
-
     $("refreshButton").addEventListener("click", refresh);
-
-
 
     $("previousButton").addEventListener("click", async () => {
 
       if (loading || saving || page === 0) return;
 
-
-
       page--;
-
-
 
       await refresh();
 
     });
-
-
 
     $("nextButton").addEventListener("click", async () => {
 
@@ -2526,17 +2028,11 @@
 
       }
 
-
-
       page++;
-
-
 
       await refresh();
 
     });
-
-
 
     $("exportAll").addEventListener("click", () => {
 
@@ -2544,72 +2040,78 @@
 
     });
 
-
-
     $("exportValid").addEventListener("click", () => {
 
       exportEntries(true);
 
     });
 
+    // Keep the login visible as a fallback; only hide it once a valid session exists.
+    function showDashboard(sessionUser) {
+      if (!sessionUser || sessionUser.id !== REVIEWER_ID) return false;
+      user = sessionUser;
+      $("loginScreen").hidden = true;
+      $("dashboard").hidden = false;
+      $("loginMessage").textContent = "";
+      return true;
+    }
 
+    let restoring = false;
+
+    async function restoreSession() {
+      if (!db || restoring) return;
+      restoring = true;
+      try {
+        const { data, error } = await db.auth.getSession();
+        if (error) throw error;
+        const session = data?.session;
+        if (session?.user?.id === REVIEWER_ID) {
+          showDashboard(session.user);
+          await refresh();
+        } else if (session?.user) {
+          await db.auth.signOut({ scope: "local" });
+          resetDashboard();
+          $("loginMessage").textContent = "This account has no reviewer access.";
+        } else if (navigator.onLine) {
+          resetDashboard();
+        } else {
+          // No network: leave the page visible rather than showing a blank screen.
+          if (user) {
+            $("dashboard").hidden = false;
+            $("loginScreen").hidden = true;
+            message("Offline. Your saved data will refresh when the connection returns.");
+          } else {
+            $("loginScreen").hidden = false;
+            $("loginMessage").textContent = "Offline. Reconnect to restore your session.";
+          }
+        }
+      } catch (error) {
+        // Network failures should not sign out a previously authenticated reviewer.
+        if (user) {
+          $("dashboard").hidden = false;
+          $("loginScreen").hidden = true;
+          message("Connection issue. Data will refresh when online: " + error.message);
+        } else {
+          $("loginScreen").hidden = false;
+          $("loginMessage").textContent = "Could not restore session. Check your connection and reload.";
+        }
+      } finally {
+        restoring = false;
+      }
+    }
 
     if (!window.supabase) {
-
       $("loginMessage").textContent =
-
         "Could not load Supabase. Check your internet and reload.";
-
-
-
       $("loginButton").disabled = true;
-
     } else {
-
-      db = window.supabase.createClient(
-
-        PROJECT_URL,
-
-        PUBLISHABLE_KEY,
-
-        {
-
-          auth: {
-
-            persistSession: true,
-
-            autoRefreshToken: true,
-
-            detectSessionInUrl: false
-
-          }
-
+      db = window.supabase.createClient(PROJECT_URL, PUBLISHABLE_KEY, {
+        auth: {
+          persistSession: true,
+          autoRefreshToken: true,
+          detectSessionInUrl: false
         }
-
-      );
-
-
-
-      // Keep the dashboard available after refresh or reconnect.
-      async function restoreSession() {
-        try {
-          const { data: { session }, error } = await db.auth.getSession();
-          if (error) throw error;
-          if (!session?.user || session.user.id !== REVIEWER_ID) {
-            if (session?.user) await db.auth.signOut({ scope: "local" });
-            resetDashboard();
-            return;
-          }
-          user = session.user;
-          $("loginScreen").hidden = true;
-          $("dashboard").hidden = false;
-          await refresh();
-        } catch (error) {
-          // A failed fetch does not automatically sign out the reviewer.
-          $("loginMessage").textContent = "Connection problem: " + error.message;
-          if (!user) $("loginScreen").hidden = false;
-        }
-      }
+      });
 
       db.auth.onAuthStateChange((event, session) => {
         if (event === "SIGNED_OUT") {
@@ -2618,31 +2120,32 @@
           user = session.user;
         }
       });
-
       restoreSession();
     }
-window.addEventListener("online", async () => {
-  if (!db) return;
 
-  try {
-    const { data: { session } } =
-      await db.auth.getSession();
+    window.addEventListener("offline", () => {
+      if (user) message("Offline. Reconnect to refresh participant data.");
+      else $("loginMessage").textContent = "Offline. Reconnect to sign in.";
+    });
 
-    if (session?.user?.id === REVIEWER_ID) {
-      user = session.user;
+    window.addEventListener("online", async () => {
+      if (!db) {
+        // If the CDN was unavailable at page load, the script needs a reload.
+        window.location.reload();
+        return;
+      }
+      if (user) {
+        try {
+          await db.auth.refreshSession();
+        } catch (error) {
+          console.warn("Session refresh failed:", error);
+        }
+        await refresh();
+      } else {
+        await restoreSession();
+      }
+    });
 
-      $("loginScreen").hidden = true;
-      $("dashboard").hidden = false;
-
-      await refresh();
-    } else if (!session) {
-      resetDashboard();
-    }
-  } catch (error) {
-    console.error("Reconnect failed:", error);
-    message("Connection problem. Please try Refresh.");
-  }
-});
   </script>
 
 </body>
