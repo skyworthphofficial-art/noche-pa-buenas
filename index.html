@@ -586,7 +586,7 @@
 
 <body>
 
-  <section id="loginScreen" class="login" hidden>
+  <section id="loginScreen" class="login">
 
     <p class="muted">SKYWORTH PHILIPPINES</p>
 
@@ -2621,7 +2621,28 @@
 
       restoreSession();
     }
+window.addEventListener("online", async () => {
+  if (!db) return;
 
+  try {
+    const { data: { session } } =
+      await db.auth.getSession();
+
+    if (session?.user?.id === REVIEWER_ID) {
+      user = session.user;
+
+      $("loginScreen").hidden = true;
+      $("dashboard").hidden = false;
+
+      await refresh();
+    } else if (!session) {
+      resetDashboard();
+    }
+  } catch (error) {
+    console.error("Reconnect failed:", error);
+    message("Connection problem. Please try Refresh.");
+  }
+});
   </script>
 
 </body>
